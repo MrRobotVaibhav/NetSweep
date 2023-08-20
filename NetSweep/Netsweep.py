@@ -51,7 +51,7 @@ def port_scan(target):
         print("Scanning IP:", ip, "| Started on:", datetime.now())
         print("-" * 80)
 
-        for port in range(1, 65536):
+        for port in range(1, 65535):
             sock = sc.socket(sc.AF_INET, sc.SOCK_STREAM)
             sock.settimeout(1)  # Shorter timeout for faster scanning
             result = sock.connect_ex((ip, port))
